@@ -3,87 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Do Liste</title>
+    <title>Habit Tracker</title>
     <style>
-        body {
-            font-family: 'San Francisco', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f2f2f2;
-        }
-        h1, h2 {
-            color: #333;
-        }
-        button {
-            background-color: #007aff;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-size: 16px;
-            margin-top: 10px;
-        }
-        li {
-            margin: 10px 0;
-            font-size: 16px;
-            padding: 5px;
-        }
-        .completed {
-            text-decoration: line-through;
-            color: gray;
-        }
-        .category-box {
-            border: 1px solid #ccc;
-            margin: 20px;
-            padding: 20px;
-            border-radius: 10px;
-            background-color: white;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 24px;
-            }
-            h2 {
-                font-size: 18px;
-            }
-            button {
-                width: 100%;
-            }
+        /* Dein bisheriger CSS-Code hier */
+        /* ... */
+        .habit {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
     </style>
 </head>
 <body>
 
-    <h1>To-Do Liste</h1>
-
-    <div class="category-box" id="personalCategory">
-        <h2>Persönliche Aufgaben</h2>
-        <ul id="personalTasks">
-        </ul>
-        <button onclick="addTask('personalTasks')">Aufgabe hinzufügen</button>
+    <h1>Habit Tracker</h1>
+    
+    <div>
+        <label for="userName">Name:</label>
+        <input type="text" id="userName">
+        <button onclick="saveName()">Name speichern</button>
     </div>
 
-    <div class="category-box" id="workCategory">
-        <h2>Arbeitsaufgaben</h2>
-        <ul id="workTasks">
-        </ul>
-        <button onclick="addTask('workTasks')">Aufgabe hinzufügen</button>
+    <div class="category-box" id="habitList">
+        <!-- Habits werden hier eingefügt -->
     </div>
 
     <script>
-        function addTask(categoryId) {
-            const task = prompt('Neue Aufgabe:');
-            if (task) {
-                const taskList = document.getElementById(categoryId);
-                const newTask = document.createElement('li');
-                newTask.textContent = task;
-                newTask.addEventListener('click', function() {
-                    this.classList.toggle('completed');
-                });
-                taskList.appendChild(newTask);
-            }
+        let userName = localStorage.getItem('userName') || '';
+        if(userName) {
+            alert(`Willkommen zurück, ${userName}`);
         }
+
+        const habits = [
+            '2 Liter Wasser getrunken',
+            'Vitamin B12 supplementiert',
+            'Training'
+        ];
+
+        function saveName() {
+            userName = document.getElementById('userName').value;
+            localStorage.setItem('userName', userName);
+        }
+
+        const habitList = document.getElementById('habitList');
+        
+        habits.forEach(habit => {
+            const habitDiv = document.createElement('div');
+            habitDiv.className = 'habit';
+
+            const habitName = document.createElement('span');
+            habitName.textContent = habit;
+            habitDiv.appendChild(habitName);
+
+            const habitCheckbox = document.createElement('input');
+            habitCheckbox.type = 'checkbox';
+            habitCheckbox.id = habit;
+            habitCheckbox.checked = localStorage.getItem(habit) === 'done';
+            habitCheckbox.addEventListener('change', function() {
+                localStorage.setItem(habit, this.checked ? 'done' : 'not_done');
+            });
+            habitDiv.appendChild(habitCheckbox);
+
+            habitList.appendChild(habitDiv);
+        });
     </script>
 
 </body>
