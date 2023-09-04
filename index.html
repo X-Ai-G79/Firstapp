@@ -2,26 +2,59 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Für iPhone-Optimierung -->
-    <title>Advanced To-Do List</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>To-Do Liste</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        li {
+            margin: 10px 0;
+        }
+        .completed {
+            text-decoration: line-through;
+        }
+        .category-box {
+            border: 1px solid #ccc;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
-    <h1>To-Do List</h1>
-    
-    <label for="category">Choose a category:</label>
-    <select id="category">
-      <option value="Personal">Personal</option>
-      <option value="Work">Work</option>
-      <option value="Study">Study</option>
-    </select>
 
-    <input type="text" id="new-task" placeholder="New Task">
-    <button onclick="addTask()">Add</button>
+    <h1>To-Do Liste</h1>
 
-    <div id="task-list">
+    <div class="category-box" id="personalCategory">
+        <h2>Persönliche Aufgaben</h2>
+        <ul id="personalTasks">
+            <!-- Aufgaben werden hier eingefügt -->
+        </ul>
+        <button onclick="addTask('personalTasks')">Aufgabe hinzufügen</button>
     </div>
 
-    <script src="script.js"></script>
+    <div class="category-box" id="workCategory">
+        <h2>Arbeitsaufgaben</h2>
+        <ul id="workTasks">
+            <!-- Aufgaben werden hier eingefügt -->
+        </ul>
+        <button onclick="addTask('workTasks')">Aufgabe hinzufügen</button>
+    </div>
+
+    <script>
+        function addTask(categoryId) {
+            const task = prompt('Neue Aufgabe:');
+            if (task) {
+                const taskList = document.getElementById(categoryId);
+                const newTask = document.createElement('li');
+                newTask.textContent = task;
+                newTask.addEventListener('click', function() {
+                    this.classList.toggle('completed');
+                });
+                taskList.appendChild(newTask);
+            }
+        }
+    </script>
+
 </body>
 </html>
