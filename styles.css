@@ -5,7 +5,7 @@ body {
     box-sizing: border-box;
 }
 
-/* Optimierung für kleine Bildschirme */
+/* Optimierung  für kleine Bildschirme */
 @media (max-width: 480px) {
     h1 {
         font-size: 1.5rem;
