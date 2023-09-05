@@ -1,67 +1,119 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>Powerlifting Gym</title>
+    <title>CrossFit Box</title>
     <style>
         /* Grundlegende Stile */
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        body, h1, h2, ul, p {
             margin: 0;
             padding: 0;
-            background: #f9f9f9;
         }
-        header {
-            background: #333;
-            color: white;
-            padding: 1rem;
-            text-align: center;
-            font-size: 2em;
-            font-weight: lighter;
-        }
-        main {
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 1rem;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        h2 {
-            font-size: 1.5em;
-            margin-bottom: 1rem;
-        }
-        p {
+        body {
+            font-family: Helvetica, Arial, sans-serif;
             line-height: 1.6;
-            margin-bottom: 1rem;
+            background: #f9f9f9;
+            color: #333;
         }
-        /* Bild-Stil */
-        img {
-            max-width: 100%;
-            height: auto;
+
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 20px;
         }
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 1rem 0;
-            background: #333;
+
+        /* Header */
+        header {
+            background: #50b3a2;
             color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        /* Über uns */
+        #about {
+            padding: 2em 0;
+        }
+
+        #about img {
+            max-width: 100%;
+            margin-top: 20px;
+        }
+
+        /* Kurse */
+        #courses {
+            background: #fff;
+            padding: 2em 0;
+        }
+
+        #courses ul {
+            list-style: none;
+        }
+
+        #courses ul li {
+            background: #f9f9f9;
+            margin: 20px 0;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Kontakt */
+        #contact {
+            padding: 2em 0;
+            text-align: center;
+        }
+
+        input[type="text"], input[type="email"], textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #50b3a2;
+            color: #fff;
+            border: none;
+            padding: 14px 20px;
+            text-transform: uppercase;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
-
     <header>
-        Powerlifting Gym
+        <h1>CrossFit Box</h1>
     </header>
 
-    <main>
-        <h2>Welcome to Our Powerlifting Gym</h2>
-        <img src="powerlifting_image.jpg" alt="Powerlifting gym image">
-        <p>We offer the best facilities for powerlifting enthusiasts. From top-notch equipment to experienced trainers, we have it all.</p>
+    <section id="about" class="container">
+        <h2>About Us</h2>
+        <p>We are committed to improving your fitness and well-being.</p>
+        <img src="about-us.jpg" alt="About Us">
+    </section>
 
-        <h2>Why Choose Us?</h2>
-        <p>Our gym offers an array of powerlifting equipment and provides you with the ideal environment to focus on your strength training.</p>
+    <section id="courses" class="container">
+        <h2>Our Courses</h2>
+        <ul>
+            <li>Beginner's Course</li>
+            <li>Intermediate Lifting</li>
+            <li>High-Intensity Training</li>
+        </ul>
+    </section>
 
-        <h2>Membership Plans</h2>
-        <p>We offer various membership plans to suit everyone
+    <section id="contact" class="container">
+        <h2>Contact Us</h2>
+        <form>
+            <input type="text" placeholder="Your Name">
+            <input type="email" placeholder="Your Email">
+            <textarea placeholder="Your Message"></textarea>
+            <input type="submit" value="Send Message">
+        </form>
+    </section>
+
+</body>
+</html>
