@@ -2,71 +2,69 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Habit Tracker</title>
     <style>
-        /* Dein bisheriger CSS-Code hier */
-        /* ... */
-        .habit {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #f1f1f1;
+        }
+        header {
+            background-color: #fff;
+            padding: 15px;
+            box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        main {
+            max-width: 900px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #007aff;
+            color: #fff;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
-
-    <h1>Habit Tracker</h1>
-    
-    <div>
-        <label for="userName">Name:</label>
-        <input type="text" id="userName">
-        <button onclick="saveName()">Name speichern</button>
-    </div>
-
-    <div class="category-box" id="habitList">
-        <!-- Habits werden hier eingefügt -->
-    </div>
-
-    <script>
-        let userName = localStorage.getItem('userName') || '';
-        if(userName) {
-            alert(`Willkommen zurück, ${userName}`);
-        }
-
-        const habits = [
-            '2 Liter Wasser getrunken',
-            'Vitamin B12 supplementiert',
-            'Training'
-        ];
-
-        function saveName() {
-            userName = document.getElementById('userName').value;
-            localStorage.setItem('userName', userName);
-        }
-
-        const habitList = document.getElementById('habitList');
-        
-        habits.forEach(habit => {
-            const habitDiv = document.createElement('div');
-            habitDiv.className = 'habit';
-
-            const habitName = document.createElement('span');
-            habitName.textContent = habit;
-            habitDiv.appendChild(habitName);
-
-            const habitCheckbox = document.createElement('input');
-            habitCheckbox.type = 'checkbox';
-            habitCheckbox.id = habit;
-            habitCheckbox.checked = localStorage.getItem(habit) === 'done';
-            habitCheckbox.addEventListener('change', function() {
-                localStorage.setItem(habit, this.checked ? 'done' : 'not_done');
-            });
-            habitDiv.appendChild(habitCheckbox);
-
-            habitList.appendChild(habitDiv);
-        });
-    </script>
-
+    <header>
+        <h1>Habit Tracker</h1>
+    </header>
+    <main>
+        <h2>Track Your Habits</h2>
+        <form id="habit-form">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="habit">Habit:</label>
+            <input type="text" id="habit" name="habit" required>
+            <input type="submit" value="Track Habit">
+        </form>
+    </main>
 </body>
 </html>
