@@ -1,119 +1,91 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>CrossFit Box</title>
+    <title>HealthTrack: Smart Health Monitoring</title>
     <style>
-        /* Grundlegende Stile */
-        body, h1, h2, ul, p {
+        body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-        }
-        body {
-            font-family: Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            background: #f9f9f9;
-            color: #333;
+            background-color: #f8f9fa;
+            color: #343a40;
         }
 
-        /* Container */
-        .container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 0 20px;
-        }
-
-        /* Header */
         header {
-            background: #50b3a2;
-            color: white;
+            background-color: #343a40;
+            color: #ffffff;
             text-align: center;
-            padding: 1em 0;
+            padding: 1em;
         }
 
-        /* Über uns */
-        #about {
-            padding: 2em 0;
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
         }
 
-        #about img {
-            max-width: 100%;
-            margin-top: 20px;
-        }
-
-        /* Kurse */
-        #courses {
-            background: #fff;
-            padding: 2em 0;
-        }
-
-        #courses ul {
-            list-style: none;
-        }
-
-        #courses ul li {
-            background: #f9f9f9;
-            margin: 20px 0;
-            padding: 15px;
-            text-align: center;
-            border-radius: 8px;
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Kontakt */
-        #contact {
-            padding: 2em 0;
-            text-align: center;
-        }
-
-        input[type="text"], input[type="email"], textarea {
-            width: 100%;
-            padding: 12px;
-            margin-top: 8px;
+        section {
             margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+            padding: 20px;
+            text-align: center;
         }
 
-        input[type="submit"] {
-            background-color: #50b3a2;
-            color: #fff;
-            border: none;
-            padding: 14px 20px;
-            text-transform: uppercase;
-            cursor: pointer;
+        .features-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .features-list li {
+            background-color: #ffffff;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: #343a40;
+            color: #ffffff;
+            text-align: center;
+            padding: 1em;
+            position: relative;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
 <body>
+
     <header>
-        <h1>CrossFit Box</h1>
+        <h1>HealthTrack</h1>
+        <p>Your Health, Our Priority</p>
     </header>
 
-    <section id="about" class="container">
-        <h2>About Us</h2>
-        <p>We are committed to improving your fitness and well-being.</p>
-        <img src="about-us.jpg" alt="About Us">
-    </section>
+    <div class="container">
+        <section id="about">
+            <h2>About Us</h2>
+            <p>We provide a comprehensive health monitoring service.</p>
+        </section>
 
-    <section id="courses" class="container">
-        <h2>Our Courses</h2>
-        <ul>
-            <li>Beginner's Course</li>
-            <li>Intermediate Lifting</li>
-            <li>High-Intensity Training</li>
-        </ul>
-    </section>
+        <section id="features">
+            <h2>Features</h2>
+            <ul class="features-list">
+                <li>Real-time Health Monitoring</li>
+                <li>Comprehensive Reports</li>
+                <li>Expert Consultations</li>
+            </ul>
+        </section>
 
-    <section id="contact" class="container">
-        <h2>Contact Us</h2>
-        <form>
-            <input type="text" placeholder="Your Name">
-            <input type="email" placeholder="Your Email">
-            <textarea placeholder="Your Message"></textarea>
-            <input type="submit" value="Send Message">
-        </form>
-    </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Email us at: <a href="mailto:info@healthtrack.com">info@healthtrack.com</a></p>
+        </section>
+    </div>
+
+    <footer>
+        <p>Copyright &copy; 2023 HealthTrack, Inc.</p>
+    </footer>
 
 </body>
 </html>
