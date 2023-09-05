@@ -1,70 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Habit Tracker</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            background-color: #f1f1f1;
-        }
-        header {
-            background-color: #fff;
-            padding: 15px;
-            box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
-        }
-        header h1 {
-            margin: 0;
-            font-size: 1.5rem;
-        }
-        main {
-            max-width: 900px;
-            margin: 50px auto;
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
-        }
-        h2 {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-        }
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
-        input[type="text"],
-        input[type="submit"] {
-            width: 100%;
-            padding: 12px;
-            margin-top: 8px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        input[type="submit"] {
-            background-color: #007aff;
-            color: #fff;
-            cursor: pointer;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>CrossFit Box</title>
+  <style>
+    /* Allgemeine Einstellungen */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background: #f1f1f1;
+    }
+    header, section {
+      background: #fff;
+      margin: 20px;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    }
+    h1, h2 {
+      margin-top: 0;
+    }
+    /* Header */
+    header {
+      text-align: center;
+      background: #333;
+      color: #fff;
+    }
+    /* Über uns */
+    #about img {
+      max-width: 100%;
+    }
+    /* Kurse */
+    #courses ul {
+      list-style: none;
+      padding: 0;
+    }
+    #courses li {
+      background: #eee;
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 4px;
+    }
+    /* Kontakt */
+    #contact form input, 
+    #contact form textarea {
+      width: 100%;
+      margin-top: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Habit Tracker</h1>
-    </header>
-    <main>
-        <h2>Track Your Habits</h2>
-        <form id="habit-form">
-            <label for="name">Your Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="habit">Habit:</label>
-            <input type="text" id="habit" name="habit" required>
-            <input type="submit" value="Track Habit">
-        </form>
-    </main>
+
+  <header>
+    <h1>CrossFit Box</h1>
+  </header>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>We are dedicated to helping you achieve your fitness goals.</p>
+    <img src="path/to/your/image.jpg" alt="CrossFit Box Image">
+  </section>
+
+  <section id="courses">
+    <h2>Courses</h2>
+    <ul>
+      <li>Beginner's Course</li>
+      <li>Advanced Lifting</li>
+      <li>High-Intensity Training</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your name">
+      <input type="email" placeholder="Your email">
+      <textarea placeholder="Your message"></textarea>
+      <input type="submit" value="Send">
+    </form>
+  </section>
+
 </body>
 </html>
